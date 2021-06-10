@@ -43,8 +43,11 @@ int main() {
     noodles.setPrice(10);
     noodles.setDiscPercent(10);
     noodles.display();
+    cout<<noodles.getSellingPrice(20)<<endl;
     dew.assignName("Mountain Dew");
     dew.setPrice(25);
-    dew.setDiscPercent(1);
+    dew.setDiscPercent(0.03);
     dew.display();
+    cout<<dew.getSellingPrice(20)<<endl;
+
 }

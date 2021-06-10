@@ -24,5 +24,14 @@ public:
 };
 
 int main() {
-
+    Counter c;
+    cout<<c.getCount()<<endl;
+    c.setIncrementStep(2);
+    c.increment();
+    cout<<c.getCount()<<endl;
+    c.increment();
+    cout<<c.getCount()<<endl;
+    c.resetCount();
+    c.increment();
+    cout<<c.getCount()<<endl;
 }
