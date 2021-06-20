@@ -47,6 +47,6 @@ int main(){
     Time t;
     t.reset(16, 51, 30);
     t.print();
-    t.advance(8, 0, 0);
+    t.advance(8, 0, 60);
     t.print();
 }
