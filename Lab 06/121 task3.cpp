@@ -13,6 +13,8 @@ public:
     ZooAnimal(): birthYear(2021), cageNumber(-1), weightData(0), height(0) {
         nameOfAnimal = "null";
     }
+    ~ZooAnimal() {
+    }
     string getNameOfAnimal(){
         return nameOfAnimal;
     }

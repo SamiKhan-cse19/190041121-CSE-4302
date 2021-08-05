@@ -14,7 +14,7 @@ private:
 public: //no-arg constructor
     time12() : pm(true), hrs(0), mins(0)
     { }
-    time12(time24); //1-arg constructor
+//    time12(time24); //1-arg constructor
     //3-arg constructor
     time12(bool ap, int h, int m) : pm(ap), hrs(h), mins(m)
     { }
@@ -56,46 +56,46 @@ public: //no-arg constructor
         if(seconds < 10) cout << '0';
         cout << seconds;
     }
-//    operator time12() const; //conversion operator
+    operator time12() const; //conversion operator
 };
 //--------------------------------------------------------------
-//time24::operator time12() const //conversion operator
-//{
-//    int hrs24 = hours;
-//    bool pm = hours < 12 ? false : true; //find am/pm
-//    //round secs
-//    int roundMins = seconds < 30 ? minutes : minutes+1;
-//    if(roundMins == 60) //carry mins?
-//    {
-//        roundMins=0;
-//        ++hrs24;
-//        if(hrs24 == 12 || hrs24 == 24) //carry hrs?
-//        pm = (pm==true) ? false : true; //toggle am/pm
-//    }
-//    int hrs12 = (hrs24 < 13) ? hrs24 : hrs24-12;
-//    if(hrs12==0) //00 is 12 a.m.
-//    { hrs12=12; pm=false; }
-//    return time12(pm, hrs12, roundMins);
-//}
-
-time12::time12( time24 t24 ) //1-arg constructor
-{ //converts time24 to time12
-    int hrs24 = t24.getHrs(); //get hours
-    //find am/pm
-    pm = t24.getHrs() < 12 ? false : true;
-    mins = (t24.getSecs() < 30) ? //round secs
-    t24.getMins() : t24.getMins()+1;
-    if(mins == 60) //carry mins?
+time24::operator time12() const //conversion operator
+{
+    int hrs24 = hours;
+    bool pm = hours < 12 ? false : true; //find am/pm
+    //round secs
+    int roundMins = seconds < 30 ? minutes : minutes+1;
+    if(roundMins == 60) //carry mins?
     {
-        mins=0;
+        roundMins=0;
         ++hrs24;
         if(hrs24 == 12 || hrs24 == 24) //carry hrs?
-            pm = (pm==true) ? false : true; //toggle am/pm
+        pm = (pm==true) ? false : true; //toggle am/pm
     }
-    hrs = (hrs24 < 13) ? hrs24 : hrs24-12; //convert hrs
-    if(hrs==0) //00 is 12 a.m.
-    { hrs=12; pm=false; }
+    int hrs12 = (hrs24 < 13) ? hrs24 : hrs24-12;
+    if(hrs12==0) //00 is 12 a.m.
+    { hrs12=12; pm=false; }
+    return time12(pm, hrs12, roundMins);
 }
+
+//time12::time12( time24 t24 ) //1-arg constructor
+//{ //converts time24 to time12
+//    int hrs24 = t24.getHrs(); //get hours
+//    //find am/pm
+//    pm = t24.getHrs() < 12 ? false : true;
+//    mins = (t24.getSecs() < 30) ? //round secs
+//    t24.getMins() : t24.getMins()+1;
+//    if(mins == 60) //carry mins?
+//    {
+//        mins=0;
+//        ++hrs24;
+//        if(hrs24 == 12 || hrs24 == 24) //carry hrs?
+//            pm = (pm==true) ? false : true; //toggle am/pm
+//    }
+//    hrs = (hrs24 < 13) ? hrs24 : hrs24-12; //convert hrs
+//    if(hrs==0) //00 is 12 a.m.
+//    { hrs=12; pm=false; }
+//}
 
 ////////////////////////////////////////////////////////////////
 int main()
