@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1629336326 source:d:\sami\semester 3\cse 4302 (object oriented programming lab)\190041121 cse 4302\lab 09\horse\task0.cpp
+	"msoftcon.h"
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1007789916 d:\sami\semester 3\cse 4302 (object oriented programming lab)\190041121 cse 4302\lab 09\horse\borlacon.h
+	<windows.h>
+	<conio.h>
+	<math.h>
+
+900044858 d:\sami\semester 3\cse 4302 (object oriented programming lab)\190041121 cse 4302\lab 09\horse\msoftcon.h
+	<windows.h>
+	<conio.h>
+	<math.h>
+
+1629336503 source:d:\sami\semester 3\cse 4302 (object oriented programming lab)\190041121 cse 4302\lab 09\horse\msoftcon.cpp
+	"msoftcon.h"
+
